@@ -31,13 +31,13 @@ public partial class DbFourSeasonHotelContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=ADMIN;Initial Catalog=dbFourSeasonHotel;TrustServerCertificate=True;Integrated Security=True;");
+        => optionsBuilder.UseSqlServer("Data Source=Admin;Initial Catalog=dbFourSeasonHotel;Integrated Security=True;encrypt=false");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__Booking__73951AED8053D634");
+            entity.HasKey(e => e.BookingId).HasName("PK__Booking__73951AEDCB40BF25");
 
             entity.ToTable("Booking");
 
@@ -54,7 +54,7 @@ public partial class DbFourSeasonHotelContext : DbContext
 
         modelBuilder.Entity<BookingDetail>(entity =>
         {
-            entity.HasKey(e => e.BookingDetailId).HasName("PK__BookingD__8136D45AEE78C861");
+            entity.HasKey(e => e.BookingDetailId).HasName("PK__BookingD__8136D45AB32E1B4F");
 
             entity.ToTable("BookingDetail");
 
@@ -71,7 +71,7 @@ public partial class DbFourSeasonHotelContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0B3E93AEE2");
+            entity.HasKey(e => e.CategoryId).HasName("PK__Category__19093A0BBC93C603");
 
             entity.ToTable("Category");
 
@@ -81,7 +81,7 @@ public partial class DbFourSeasonHotelContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE1AD47E8420");
+            entity.HasKey(e => e.RoleId).HasName("PK__Role__8AFACE1A84529410");
 
             entity.ToTable("Role");
 
@@ -90,7 +90,7 @@ public partial class DbFourSeasonHotelContext : DbContext
 
         modelBuilder.Entity<Room>(entity =>
         {
-            entity.HasKey(e => e.RoomId).HasName("PK__Room__32863939F4568585");
+            entity.HasKey(e => e.RoomId).HasName("PK__Room__32863939B166955C");
 
             entity.ToTable("Room");
 
@@ -118,7 +118,7 @@ public partial class DbFourSeasonHotelContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__User__1788CC4CD24A81F0");
+            entity.HasKey(e => e.UserId).HasName("PK__User__1788CC4C994DF941");
 
             entity.ToTable("User");
 
@@ -133,9 +133,7 @@ public partial class DbFourSeasonHotelContext : DbContext
                 .HasMaxLength(12)
                 .IsUnicode(false)
                 .HasColumnName("IDCard");
-            entity.Property(e => e.Password)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+            entity.Property(e => e.Password).IsUnicode(false);
             entity.Property(e => e.Phone)
                 .HasMaxLength(10)
                 .IsUnicode(false);

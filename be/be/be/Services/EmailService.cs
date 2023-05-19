@@ -11,7 +11,13 @@ namespace be.Services
 {
     public class EmailService
     {
-        public async Task<bool> SendMail(string mail, int type, string value)
+        private static EmailService instance;
+        public static EmailService Instance
+        {
+            get { if (instance == null) instance = new EmailService(); return EmailService.instance; }
+            private set { EmailService.instance = value; }
+        }
+        public async Task<bool> SendMail(string mail, int type, string value = null)
         {
             try
             {
@@ -29,7 +35,7 @@ namespace be.Services
                 var email = new MimeMessage();
                 email.From.Add(MailboxAddress.Parse("vmhsky7@gmail.com"));
                 email.To.Add(MailboxAddress.Parse(mail));
-                email.Subject = "Xác nhận danh tính";
+                email.Subject = "Confirm account";
                 email.Body = new TextPart(TextFormat.Html)
                 {
                     Text = _text

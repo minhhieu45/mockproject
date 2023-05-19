@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MockProject\\be\\be\\be\\be.csproj": {}
+    "D:\\MockProject\\mockproject\\be\\be\\be\\be.csproj": {}
   },
   "projects": {
-    "D:\\MockProject\\be\\be\\be\\be.csproj": {
+    "D:\\MockProject\\mockproject\\be\\be\\be\\be.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MockProject\\be\\be\\be\\be.csproj",
+        "projectUniqueName": "D:\\MockProject\\mockproject\\be\\be\\be\\be.csproj",
         "projectName": "be",
-        "projectPath": "D:\\MockProject\\be\\be\\be\\be.csproj",
+        "projectPath": "D:\\MockProject\\mockproject\\be\\be\\be\\be.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\MockProject\\be\\be\\be\\obj\\",
+        "outputPath": "D:\\MockProject\\mockproject\\be\\be\\be\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
@@ -49,15 +49,15 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "MailKit": {
               "target": "Package",
               "version": "[4.0.0, )"
             },
-            "Microsoft.AspNetCore.Mvc.Cors": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
@@ -85,9 +85,17 @@
               "target": "Package",
               "version": "[4.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
             }
           },
           "imports": [
